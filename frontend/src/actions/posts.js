@@ -2,9 +2,15 @@ import * as api from '../api';
 
 //Creating Actions
 
-const getPosts =()=> async(dispatch) =>{
-    const action ={type:'FETCH_ALL',payload:[]}
-    dispatch(action);
-}
+export const getPosts =()=> async(dispatch) =>{
 
-export default getPosts;
+    try {
+        const {data} = await api.fetchData();
+        const action ={type:'FETCH_ALL',payload:data};
+        dispatch(action);
+    } catch (error) {
+        console.log(error.message);
+    }
+};
+
+// export default getPosts;

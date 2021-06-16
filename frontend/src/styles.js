@@ -16,5 +16,6 @@ export default makeStyles(() => ({
     marginLeft: '15px',
     paddingBottom: '7px',
     paddingTop:'7px',
+    paddingRight:'7px',
   },
 }));
