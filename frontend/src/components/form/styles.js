@@ -21,5 +21,17 @@ export default makeStyles((theme) => ({
   },
   buttonSubmit: {
     marginBottom: 10,
+    marginRight:40,
+    width:140,
   },
+  together :{
+    display:'flex',
+    margin:'auto',
+    padding:'15px',
+  },
+  buttonClear :{
+    marginBottom: 10,
+    width:140,
+  }
+
 }));

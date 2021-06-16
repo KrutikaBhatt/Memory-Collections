@@ -6,6 +6,7 @@ const Posts  = () =>{
     
     const style = useStyles();
     const posts = useSelector((state) => state.posts);
+    console.log(posts);
     return (
         <>
         <SinglePost />  
