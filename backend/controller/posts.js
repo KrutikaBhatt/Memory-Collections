@@ -1,6 +1,11 @@
+import mongoose from 'mongoose';
+import express from 'express';
 import PostMessage from '../models/postMessage.js';
 
 // For Http status code : https://restapitutorial.com/httpstatuscodes.html
+
+
+const router = express.Router();
 
 export const getPosts= async(req,res,next) =>{
     try {
@@ -24,3 +29,15 @@ export const createPost= async (req,res) =>{
     }
 
 };
+
+export const updatePost = async(req,res)=>{
+    const id = req.params.id;
+    const post = req.body;
+    // Check if the Id is moongoose Id
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).send('No memory available with that id');
+    }
+
+    const newPost = await PostMessage.findByIdAndUpdate(id,{...post,id},{new:true});
+    res.json(newPost);
+}

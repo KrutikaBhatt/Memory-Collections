@@ -5,7 +5,7 @@ import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import moment from 'moment';
-const SinglePost  = ({post}) =>{
+const SinglePost  = ({post,setcurrentId}) =>{
     const style = useStyles();
     console.log(post);
     return (
@@ -17,7 +17,7 @@ const SinglePost  = ({post}) =>{
             </div>
 
             <div className={style.overlay2}>
-                <Button style={{color:'white'}} size="small" onClick={() => {}}>
+                <Button style={{color:'white'}} size="small" onClick={() => setcurrentId(post._id)}>
                     <MoreHorizIcon fontSize="default" />
                 </Button>
             </div>
